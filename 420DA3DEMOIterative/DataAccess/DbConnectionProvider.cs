@@ -1,0 +1,21 @@
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _420DA3DEMOIterative.DataAccess
+{
+    internal class DbConnectionProvider
+    {
+        private static string connectionString = "";
+        private static SqlConnection? connection;
+
+        public static SqlConnection GetConnection()
+        {
+            connection ??= new SqlConnection(connectionString);
+            return connection;
+        }
+    }
+}
